@@ -1,6 +1,6 @@
 # KOM Map Viewer
 
-An app (a python script!) for viewing your KOMs overlaid on a map.
+A webapp using the Strava API to view your KOMs on a world map
 
 ## Setup
 
