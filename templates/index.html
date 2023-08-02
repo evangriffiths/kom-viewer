@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KOM viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Get POI data from Python as a JSON string
+    var poiData = {{poi_data | tojson | safe}};
+
+    // Parse the JSON string to convert it into a JavaScript object
+    var poiArray = JSON.parse(poiData);
+
+    // Loop through the POIs and add markers to the map
+    for (var i = 0; i < poiArray.length; i++) {
+      var poi = L.marker([poiArray[i].latitude, poiArray[i].longitude]).addTo(map);
+      var link = '<a href="' + poiArray[i].url + '" target="_blank">' + poiArray[i].name + '</a>' + '<br>' + poiArray[i].date_string;
+      poi.bindPopup(link);
+    }
+
+    // Set the map bounds to the bounds of the POIs
+    var minBound = {{ min_bound }}
+    var maxBound = {{ max_bound }}
+    map.fitBounds([minBound, maxBound]);
+  </script>
+</body>
+</html>
