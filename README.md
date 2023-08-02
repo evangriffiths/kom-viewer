@@ -36,8 +36,6 @@ Optionally add this to your .env file to prevent the need to authorize every tim
 
 ## Run
 
-Run:
-
 ```bash
 python app.py
 ```
