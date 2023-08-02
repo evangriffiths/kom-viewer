@@ -1,4 +1,4 @@
-# KOM Map Viewer
+# KOM Viewer
 
 A webapp using the Strava API to view your KOMs on a world map
 
@@ -8,6 +8,7 @@ Install dependencies:
 
 ```python
 python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
