@@ -1,4 +1,4 @@
-# KOM Map Viewer
+# KOM Viewer
 
 A webapp using the Strava API to view your KOMs on a world map
 
