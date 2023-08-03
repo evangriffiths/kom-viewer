@@ -67,6 +67,11 @@ def get_all_pages(url: str, access_token: str, per_page: int = 200):
     return all_responses
 
 def get_athlete_koms(access_token: str) -> list[KOM]:
+    # TODO try building swagger_client library
+    # import swagger_client
+    # swagger_client.configuration.access_token = access_token
+    # api_instance = swagger_client.ActivitiesApi()
+
     athlete_url = "https://www.strava.com/api/v3/athlete"
     athlete_info = make_strava_api_request(athlete_url, access_token)
     athlete_id = athlete_info["id"]
