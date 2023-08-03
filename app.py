@@ -35,6 +35,9 @@ def callback():
     )
     koms = get_athlete_koms(access_token)
 
+    if not koms:
+        return "No KOMs found. That's okay, you're plenty and you're perfect."
+
     min_kom_lat = min([kom.segment_start_latitude for kom in koms])
     min_kom_long = min([kom.segment_start_longitude for kom in koms])
     max_kom_lat = max([kom.segment_start_latitude for kom in koms])
