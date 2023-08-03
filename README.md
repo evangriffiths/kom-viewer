@@ -41,11 +41,13 @@ git push heroku main
 # Set up env vars
 heroku config:set STRAVA_CLIENT_ID=...
 heroku config:set STRAVA_CLIENT_SECRET=...
+# This has to match the domain in the Authorization Callback Domain field
+# of the strava API settings
 heroku config:set REDIRECT_URI=http://<your-heroku-app-url>/callback
 ```
 
 Note you can get the url for your app with:
 
 ```bash
-heroku domains --app kom-viewer
+heroku domains
 ```
