@@ -19,24 +19,12 @@ STRAVA_CLIENT_ID=...
 STRAVA_CLIENT_SECRET=...
 ```
 
-Get your API refresh code by running:
-
-```bash
-python authorize.py
-```
-
-This opens a browser window to the Strava API authorization page.
-
-Once you authorize the app, you will be redirected to another page. If you look in your terminal log, you will find your refresh code:
-
-```bash
-STRAVA_REFRESH_TOKEN=...
-```
-
-Optionally add this to your .env file to prevent the need to authorize every time you use the app.
-
-## Run
+## Run locally
 
 ```bash
 python app.py
 ```
+
+Open `http://localhost:5000` in a browser. You'll be redirected to authorize this app by logging into your Strava account.
+
+Once logged in you'll be redirected back to the app where you can view your KOMs overlaid on a world map.
