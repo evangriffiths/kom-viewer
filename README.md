@@ -28,3 +28,7 @@ python app.py
 Open `http://localhost:5000` in a browser. You'll be redirected to authorize this app by logging into your Strava account.
 
 Once logged in you'll be redirected back to the app where you can view your KOMs overlaid on a world map.
+
+## Hosting
+
+Hosted on [Render](https://render.com/) at kom-viewer.onrender.com. Note that this link must be set in the 'Authorization Callback Domain' field at https://www.strava.com/settings/api. All configuration is done via Render's web GUI.
