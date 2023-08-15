@@ -66,7 +66,7 @@ def get_all_pages(url: str, access_token: str, per_page: int = 200):
             break
     return all_responses
 
-def get_athlete_koms(access_token: str) -> list[KOM]:
+def get_athlete_koms(access_token: str) -> "list[KOM]":
     # TODO try building swagger_client library
     # import swagger_client
     # swagger_client.configuration.access_token = access_token
