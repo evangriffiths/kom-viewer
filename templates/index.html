@@ -3,9 +3,45 @@
 <head>
   <title>KOM viewer</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .header img {
+      height: 36px;
+    }
+    .header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 30px;
+    }
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
 <body>
-  <div id="map" style="height: 500px;"></div>
+  <div class="header">
+    <img src="static/kom-icon.jpeg" alt="KOM icon">
+    <h1>KOM Viewer</h1>
+    <img src="static/kom-icon.jpeg" alt="KOM icon">
+  </div>
+  <div id="map"></div>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
     // Initialize the map
@@ -32,5 +68,8 @@
     var maxBound = {{ max_bound }}
     map.fitBounds([minBound, maxBound]);
   </script>
+  <div class="footer">
+    This app was created by <a href="https://www.evangriffiths.org">Evan Griffiths</a>, source code <a href="https://github.com/evangriffiths/kom-viewer">here</a>.
+  </div>
 </body>
 </html>
