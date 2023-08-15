@@ -28,26 +28,3 @@ python app.py
 Open `http://localhost:5000` in a browser. You'll be redirected to authorize this app by logging into your Strava account.
 
 Once logged in you'll be redirected back to the app where you can view your KOMs overlaid on a world map.
-
-## Deploy on heroku
-
-Following instructions [here](https://devcenter.heroku.com/articles/getting-started-with-python#create-and-deploy-the-app): 
-
-```bash
-heroku login
-heroku create kom-viewer
-git push heroku main
-
-# Set up env vars
-heroku config:set STRAVA_CLIENT_ID=...
-heroku config:set STRAVA_CLIENT_SECRET=...
-# This has to match the domain in the Authorization Callback Domain field
-# of the strava API settings
-heroku config:set REDIRECT_URI=http://<your-heroku-app-url>/callback
-```
-
-Note you can get the url for your app with:
-
-```bash
-heroku domains
-```
